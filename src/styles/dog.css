@@ -1,0 +1,128 @@
+.dog .markdown a {
+  @apply text-red-500 dark:text-red-400;
+}
+
+.dog .markdown h1,
+.dog .markdown h2,
+.dog .markdown h3,
+.dog .markdown h4 {
+  @apply font-bold relative c-text-800;
+}
+
+.dog .markdown h1,
+.dog .markdown h2,
+.dog .markdown h3,
+.dog .markdown h4 {
+  @apply mt-7;
+}
+
+.dog .markdown h1::before,
+.dog .markdown h2::before,
+.dog .markdown h3::before,
+.dog .markdown h4::before {
+  @apply absolute text-sm c-text-400 -left-7 bottom-1;
+}
+
+.dog .markdown h1 {
+  @apply text-3xl;
+}
+
+.dog .markdown h1::before {
+  content: "H1";
+}
+
+.dog .markdown h2 {
+  @apply text-2xl;
+}
+
+.dog .markdown h2::before {
+  content: "H2";
+}
+
+.dog .markdown h3 {
+  @apply text-xl;
+}
+
+.dog .markdown h3::before {
+  content: "H3";
+}
+
+.dog .markdown h3 {
+  @apply text-xl;
+}
+
+.dog .markdown h4 {
+  @apply text-lg;
+}
+
+.dog .markdown h4::before {
+  content: "H4";
+}
+
+.dog .markdown p {
+  @apply mt-6;
+}
+
+.dog .markdown h2 + p,
+.dog .markdown h3 + p,
+.dog .markdown h4 + p {
+  @apply mt-4;
+}
+
+.dog .markdown ul,
+.dog .markdown ol {
+  @apply mt-2 pl-5;
+}
+
+.dog .markdown ul {
+  @apply list-disc;
+}
+
+.dog .markdown ul > li::marker {
+  @apply text-red-500 dark:text-red-400;
+}
+
+.dog .markdown ol {
+  @apply list-decimal;
+}
+
+.dog .markdown li p {
+  @apply m-0 mb-2;
+}
+
+.dog .markdown code {
+  @apply text-sm border c-border-300 rounded py-0.5 px-1 c-bg-50;
+}
+
+.dog .markdown pre {
+  @apply mt-2 text-sm;
+}
+
+.dog .markdown pre code {
+  @apply text-sm bg-transparent border-none p-0;
+}
+
+.dog .markdown pre div {
+  @apply border c-border-300 rounded;
+}
+
+.dog .markdown .token {
+	background: transparent !important;
+}
+
+.dog .markdown img {
+  @apply inline-block;
+}
+
+.dog .markdown table {
+  @apply mt-4 block w-full overflow-auto;
+}
+
+.dog .markdown table td,
+.dog .markdown table th {
+  @apply px-3 py-2 border c-border-300;
+}
+
+.dog .markdown table tr {
+  @apply border-t border-gray-300 bg-transparent;
+}
