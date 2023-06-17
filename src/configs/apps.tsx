@@ -5,6 +5,7 @@ import Dog from "~/components/apps/Dog";
 import VSCode from "~/components/apps/VSCode";
 
 import type { AppsData } from "~/types";
+import Blogs from "~/components/apps/Blogs";
 
 const apps: AppsData[] = [
   {
@@ -72,6 +73,17 @@ const apps: AppsData[] = [
     desktop: false,
     img: "img/icons/github.png",
     link: "https://github.com/subashrijal5"
+  },
+  {
+    id: "blogs",
+    title: "Blogs",
+    desktop: true,
+    show: false,
+    width: 1024,
+    minWidth: 375,
+    minHeight: 600,
+    img: "img/icons/blog.png",
+    content: <Blogs />
   }
 ];
 

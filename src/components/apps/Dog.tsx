@@ -78,13 +78,14 @@ const Sidebar = ({ cur, setMidBar }: SidebarProps) => {
             <span className="ml-2">{item.title}</span>
           </li>
         ))}
-
+        {/*
         <li
           className={`pl-6 h-8 hstack cursor-default bg-transparent hover:bg-gray-600"`}
+          // onClick={() => setMidBar(dog[0].md, 0)}
         >
           <span className="i-ri:newspaper-line" />
           <span className="ml-2">Blogs</span>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
@@ -94,7 +95,7 @@ const Middlebar = ({ items, cur, setContent }: MiddlebarProps) => {
   return (
     <div
       className="w-full h-full overflow-y-scroll border-r c-border-300"
-      bg="gray-50 dark:gray-800"
+      bg="gray-50      :gray-800"
     >
       <ul>
         {items.map((item: DogMdData, index: number) => (
