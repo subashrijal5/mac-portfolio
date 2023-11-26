@@ -1,21 +1,10 @@
 import React, { useState } from "react";
 
 const Blogs = () => {
-  const tags = [
-    { id: 1, name: "Technology", color: "border-red" },
-    { id: 2, name: "Travel", color: "border-blue" },
-    { id: 3, name: "Food", color: "border-green" },
-    { id: 4, name: "Fashion", color: "border-black" }
-  ];
-
-  const [activeTag, setActiveTag] = useState<number | null>(null);
-
-  const handleTagClick = (tagId: number) => {
-    setActiveTag(tagId);
-  };
   return (
-    <div className={`container mx-auto h-full bg-light dark:bg-dark grid grid-cols-5`}>
-      <div className="sidebar sticky top-0 h-full w-full bg-gray-700 text-white overflow-y-scroll">
+    <div className={`container mx-auto h-full bg-light dark:bg-dark `}>
+      <iframe src="https://bhudex.com" className="h-full w-full"></iframe>
+      {/* <div className="sidebar sticky top-0 h-full w-full bg-gray-700 text-white overflow-y-scroll">
         <h2 className="border-b-2 border-gray text-xl font-bold">
           <span className="underline-border">Tags</span>
         </h2>
@@ -161,7 +150,7 @@ const Blogs = () => {
             </div>
           </article>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

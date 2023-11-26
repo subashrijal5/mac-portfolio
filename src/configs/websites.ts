@@ -6,40 +6,22 @@ const websites: WebsitesData = {
     sites: [
       {
         id: "my-blog",
-        title: "Website",
-        img: "https://zxh.io/img/avatar.jpg",
-        link: "https://zxh.io/",
+        title: "Bhudex",
+        img: "https://bhudex.com/images/blog-logo/logo-color.svg",
+        link: "https://bhudex.com/",
         inner: true
       },
       {
         id: "my-github",
         title: "Github",
         img: "img/sites/github.svg",
-        link: "https://github.com/Renovamen"
+        link: "https://github.com/subashrijal5"
       },
       {
         id: "my-linkedin",
         title: "Linkedin",
         img: "img/sites/linkedin.svg",
-        link: "https://www.linkedin.com/in/xiaohan-zou"
-      },
-      {
-        id: "my-google-scholar",
-        title: "Scholar",
-        img: "img/sites/google-scholar.svg",
-        link: "https://scholar.google.com/citations?user=RuW6xgMAAAAJ"
-      },
-      {
-        id: "my-zhihu",
-        title: "知乎",
-        img: "img/sites/zhihu.jpeg",
-        link: "https://www.zhihu.com/people/chao-neng-gui-su"
-      },
-      {
-        id: "my-twitter",
-        title: "Twitter",
-        img: "img/sites/twitter.svg",
-        link: "https://www.twitter.com/renovamen_zxh"
+        link: "https://www.linkedin.com/in/subash-rijal-75319b179/"
       },
       {
         id: "my-email",
@@ -56,13 +38,7 @@ const websites: WebsitesData = {
         id: "github",
         title: "Github",
         img: "img/sites/github.svg",
-        link: "https://github.com/"
-      },
-      {
-        id: "arxiv",
-        title: "arXiv",
-        img: "img/sites/arxiv.png",
-        link: "https://arxiv.org/"
+        link: "https://github.com/subashrijal5"
       },
       {
         id: "twitter",
@@ -95,12 +71,6 @@ const websites: WebsitesData = {
         link: "https://www.bilibili.com/"
       },
       {
-        id: "zhihu",
-        title: "知乎",
-        img: "img/sites/zhihu.jpeg",
-        link: "https://www.zhihu.com/"
-      },
-      {
         id: "leetcode",
         title: "LeetCode",
         img: "img/sites/leetcode.svg",
@@ -117,12 +87,6 @@ const websites: WebsitesData = {
         title: "Hacker News",
         img: "img/sites/hacker.svg",
         link: "https://news.ycombinator.com/"
-      },
-      {
-        id: "v2ex",
-        title: "V2EX",
-        img: "https://www.v2ex.com/apple-touch-icon.png",
-        link: "https://www.v2ex.com/"
       },
       {
         id: "aideadline",
@@ -143,11 +107,7 @@ const websites: WebsitesData = {
         img: "img/sites/steam.svg",
         link: "https://store.steampowered.com/"
       },
-      {
-        id: "nazo",
-        title: "Nazo",
-        link: "https://nazo.one-story.cn"
-      },
+
       {
         id: "svgomg",
         title: "SVGOMG",

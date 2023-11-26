@@ -6,13 +6,18 @@ Hello, I'm Subash Rijal, a software developer from Nepal currently living in Jap
 - 💼 5 years of working experience as a software developer
 
 ### Skills
-- React, Vue.js, Typescript
+
+- React, Vue.js, Typescript, Svelte, Next.js,
 - Node.js, Nest.js, Express.js, Laravel
 - Redis, PostgreSQL, MySQL, MongoDB
-- Python
+- Python, FastAPI, Langchain, Promt Engineering, Milvus, Faiss
+- Aws, Docker, Docker compose, CICD, git, github actions, microservices
+- Make script, Bash script, Linux
 
 ### Current Focus
+
 I am currently expanding my knowledge in the following areas:
+
 - Machine Learning and Natural Language Processing
 - Mojo
 - Rust

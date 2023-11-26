@@ -13,9 +13,9 @@ const terminal: TerminalData[] = [
         content: (
           <div className="py-1">
             <div>
-              Hi, this is Subash RIjal. I received my master's degree in Computer Science
-              at Boston University and bachelor's degree in Software Engineering at Tongji
-              University.
+              Hi, this is Subash RIjal. I am From Nepal. I have completed HND leading to
+              computing and system development on 2017. Then I started to work as web
+              developer.
             </div>
           </div>
         )
@@ -24,14 +24,9 @@ const terminal: TerminalData[] = [
         id: "about-interests",
         title: "interests.txt",
         type: "file",
-        content: "Machine Learning / Computer Vision / Vision-Language Learning"
+        content: "Machine Learning / Artificial Intelligence / IOT and Robotics"
       },
-      {
-        id: "about-who-cares",
-        title: "who-cares.txt",
-        type: "file",
-        content: "I'm a incoming Ph.D. student lol."
-      },
+
       {
         id: "about-contact",
         title: "contact.txt",
@@ -53,54 +48,44 @@ const terminal: TerminalData[] = [
               Github:{" "}
               <a
                 className="text-blue-300"
-                href="https://github.com/Renovamen"
+                href="https://github.com/subashrijal5"
                 target="_blank"
                 rel="noreferrer"
               >
-                @Renovamen
-              </a>
-            </li>
-            <li>
-              <a
-                className="text-blue-300"
-                href="https://scholar.google.com/citations?user=RuW6xgMAAAAJ"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Google Scholar
+                @subashrijal5
               </a>
             </li>
             <li>
               Linkedin:{" "}
               <a
                 className="text-blue-300"
-                href="https://www.linkedin.com/in/xiaohan-zou"
+                href="https://www.linkedin.com/in/subash-rijal-75319b179/"
                 target="_blank"
                 rel="noreferrer"
               >
-                xiaohan-zou
+                Subash Rijal
               </a>
             </li>
             <li>
               Personal Website:{" "}
               <a
                 className="text-blue-300"
-                href="https://zxh.io"
+                href="https://subashrijal.com.np"
                 target="_blank"
                 rel="noreferrer"
               >
-                https://zxh.io
+                https://subashrijal.com.np
               </a>
             </li>
             <li>
-              知乎:{" "}
+              Blog and writings:{" "}
               <a
                 className="text-blue-300"
-                href="https://www.zhihu.com/people/chao-neng-gui-su"
+                href="https://bhudex.com"
                 target="_blank"
                 rel="noreferrer"
               >
-                @西伯利亚大恶龙
+                https://bhudex.com
               </a>
             </li>
           </ul>
