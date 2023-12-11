@@ -149,6 +149,7 @@ const TopBar = (props: TopBarProps) => {
 
   const logout = (): void => {
     controls.pause();
+    localStorage.removeItem("password");
     props.setLogin(false);
   };
 
