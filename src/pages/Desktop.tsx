@@ -6,6 +6,7 @@ import Dock from "~/components/dock/Dock";
 import Launchpad from "~/components/Launchpad";
 import Window from "~/components/Window";
 import Spotlight from "~/components/Spotlight";
+import V2Dialog from "~/components/V2Dialog";
 import { apps, wallpapers } from "~/configs";
 import { useStore } from "~/stores";
 import type { MacActions } from "~/types";
@@ -45,6 +46,8 @@ export default function Desktop(props: MacActions) {
     spotlight: false
   } as DesktopState);
 
+  const [showV2Dialog, setShowV2Dialog] = useState(false);
+
   const [spotlightBtnRef, setSpotlightBtnRef] =
     useState<RefObject<HTMLDivElement> | null>(null);
 
@@ -52,6 +55,15 @@ export default function Desktop(props: MacActions) {
     dark: state.dark,
     brightness: state.brightness
   }));
+
+  useEffect(() => {
+    getAppsData();
+    const hasVisited = localStorage.getItem("hasVisitedBefore");
+    if (!hasVisited) {
+      setShowV2Dialog(true);
+      localStorage.setItem("hasVisitedBefore", "true");
+    }
+  }, []);
 
   const getAppsData = (): void => {
     let showApps = {},
@@ -80,10 +92,6 @@ export default function Desktop(props: MacActions) {
 
     setState({ ...state, showApps, appsZ, maxApps, minApps });
   };
-
-  useEffect(() => {
-    getAppsData();
-  }, []);
 
   const toggleLaunchpad = (target: boolean): void => {
     const r = document.querySelector(`#launchpad`) as HTMLElement;
@@ -245,10 +253,12 @@ export default function Desktop(props: MacActions) {
     <div
       className="w-full h-full overflow-hidden bg-center bg-cover"
       style={{
-        backgroundImage: `url(${dark ? wallpapers.night : wallpapers.day})`,
-        filter: `brightness( ${(brightness as number) * 0.7 + 50}% )`
+        backgroundImage: `url(${wallpapers[dark ? "night" : "day"]})`,
+        filter: `brightness(${brightness}%)`
       }}
+      onClick={() => state.spotlight && setState({ ...state, spotlight: false })}
     >
+      <V2Dialog isOpen={showV2Dialog} onClose={() => setShowV2Dialog(false)} />
       {/* Top Menu Bar */}
       <TopBar
         title={state.currentTitle}

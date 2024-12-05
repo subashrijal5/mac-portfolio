@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { useStore } from "~/stores";
 import { wallpapers, user } from "~/configs";
 import type { MacActions } from "~/types";
+import V2Dialog from "~/components/V2Dialog";
 
 export default function Login(props: MacActions) {
   const [password, setPassword] = useState("Password");
   const [sign, setSign] = useState("Click to enter");
   const dark = useStore((state) => state.dark);
+  const [showV2Dialog, setShowV2Dialog] = useState<boolean>(true);
 
   const keyPress = (e: React.KeyboardEvent) => {
     const keyCode = e.key;
@@ -53,7 +55,7 @@ export default function Login(props: MacActions) {
           alt="img"
         />
         <div className="font-semibold mt-2 text-xl text-white">{user.name}</div>
-
+        <V2Dialog isOpen={showV2Dialog} onClose={() => setShowV2Dialog(false)} />
         {/* Password Input */}
         <div className="mx-auto grid grid-cols-5 w-44 h-8 mt-4 rounded-md backdrop-blur-2xl bg-gray-300/50">
           <input

@@ -11,6 +11,7 @@ import { useStore } from "~/stores";
 import { music } from "~/configs";
 import { useAudio, useWindowSize, useInterval } from "~/hooks";
 import type { MacActions } from "~/types";
+import V2Dialog from "../V2Dialog";
 
 // ------- import icons -------
 interface TopBarItemProps {
@@ -82,6 +83,8 @@ const TopBar = (props: TopBarProps) => {
     showWifiMenu: false,
     showAppleMenu: false
   });
+
+  const [showV2Dialog, setShowV2Dialog] = useState(false);
 
   /* eslint-disable-next-line @typescript-eslint/no-unused-vars */
   const [audio, audioState, controls, audioRef] = useAudio({
@@ -171,50 +174,43 @@ const TopBar = (props: TopBarProps) => {
   return (
     <div
       className={`w-full h-8 px-2 fixed top-0 hstack justify-between ${
-        props.hide ? "z-0" : "z-20"
+        props.hide ? "z-0" : "z-50"
       } text-sm text-white bg-gray-700/10 backdrop-blur-2xl shadow transition`}
+      style={{ background: "rgba(0, 0, 0, 0.2)" }}
     >
-      <div className="hstack space-x-1">
-        <TopBarItem
-          className="px-2"
-          forceHover={state.showAppleMenu}
-          onClick={toggleAppleMenu}
-          ref={appleBtnRef}
-        >
-          <span className="i-ri:apple-fill text-base" />
+      <div className="hstack space-x-2">
+        <TopBarItem onClick={() => setState({ ...state, showAppleMenu: true })}>
+          <img
+            className="w-4 h-4 filter-white dark:filter-dark"
+            src="./logos/apple.png"
+            alt="apple"
+          />
         </TopBarItem>
-        <TopBarItem
-          className="font-semibold px-2"
-          onMouseEnter={() => {
-            if (state.showAppleMenu) toggleAppleMenu();
-          }}
+        <span className="font-semibold">{props.title}</span>
+      </div>
+
+      {/* Center section with V2 button */}
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+        <TopBarItem 
+          onClick={() => setShowV2Dialog(true)}
+          className="relative"
         >
-          {props.title}
+          <span className="
+            text-sm 
+            flex items-center gap-1.5
+            text-blue-500 dark:text-blue-400
+            hover:text-blue-600 dark:hover:text-blue-300
+            transition-colors
+          ">
+            <span className="i-carbon-rocket text-[14px]" />
+            Try V2
+          </span>
         </TopBarItem>
       </div>
 
-      {/* Open this when clicking on Apple logo */}
-      {state.showAppleMenu && (
-        <AppleMenu
-          logout={logout}
-          shut={shut}
-          restart={restart}
-          sleep={sleep}
-          toggleAppleMenu={toggleAppleMenu}
-          btnRef={appleBtnRef}
-        />
-      )}
-
-      <div className="hstack flex-row justify-end space-x-2">
+      <div className="hstack space-x-2">
+        <Battery />
         <TopBarItem hideOnMobile={true}>
-          <Battery />
-        </TopBarItem>
-        <TopBarItem
-          hideOnMobile={true}
-          forceHover={state.showWifiMenu}
-          onClick={toggleWifiMenu}
-          ref={wifiBtnRef}
-        >
           {wifi ? (
             <span className="i-material-symbols:wifi text-lg" />
           ) : (
@@ -254,6 +250,21 @@ const TopBar = (props: TopBarProps) => {
           <span>{format(state.date, "h:mm aa")}</span>
         </TopBarItem>
       </div>
+
+      {/* Open this when clicking on Apple logo */}
+      {state.showAppleMenu && (
+        <AppleMenu
+          logout={logout}
+          shut={shut}
+          restart={restart}
+          sleep={sleep}
+          toggleAppleMenu={toggleAppleMenu}
+          btnRef={appleBtnRef}
+        />
+      )}
+
+      {/* Add V2Dialog */}
+      <V2Dialog isOpen={showV2Dialog} onClose={() => setShowV2Dialog(false)} />
     </div>
   );
 };
